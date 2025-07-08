@@ -2,15 +2,14 @@ import { test, expect } from '@playwright/test';
 const URL = 'https://staging-bluestat-cms.devfullteam.tech/login';
 const EMAIL = 'suleemas.fua+55@fullteam.tech';
 const PASSWORD = 'Ying964232';
-const BRAND_ID = '297';//ying_currency3 420//297
-const OUTLET_ID = '1471'; //test_currency3 1474//1471
+const BRAND_ID = '557';//ying_currency3 420//297
+const OUTLET_ID = '1600'; //test_currency3 1474//1471
 // Login utility function
 async function login(page: any) {
 await page.goto(URL, { timeout: 10000 });
 await page.locator('#email').fill(EMAIL);
 await page.locator('#password').fill(PASSWORD);
 await page.getByRole('button', { name: 'ลงชื่อเข้าใช้' }).click();
-// await page.waitForTimeout(10000);
 await page.waitForLoadState('networkidle');
 }
 
@@ -18,7 +17,8 @@ test.describe('Login', () => {
   test('create terminal', async ({ page }) => {// Login
   await login(page);
   await page.waitForLoadState('networkidle');// รอให้หน้าโหลดเสร็จและใช้ selector ที่แม่นยำมากขึ้น
-  await page.getByText('ผู้ใช้งานสูงสุด').first().click();// ลองใช้ first() เพื่อเลือก element แรกที่เจอ
+  await page.waitForTimeout(5000);
+  await page.getByText('ผู้ใช้งานสูงสุด').first().click();
   await page.getByPlaceholder('ค้นหาแบรนด์..').click();
   await page.getByPlaceholder('ค้นหาแบรนด์..').fill(BRAND_ID);
   await page.getByText(BRAND_ID).click();
@@ -40,6 +40,7 @@ test.describe('Login', () => {
   test('delete terminal', async ({ page }) => {// Login
   await login(page);
   await page.waitForLoadState('networkidle');// รอให้หน้าโหลดเสร็จและใช้ selector ที่แม่นยำมากขึ้น
+  await page.waitForTimeout(5000);
   await page.getByText('ผู้ใช้งานสูงสุด').first().click();// ลองใช้ first() เพื่อเลือก element แรกที่เจอ
   await page.getByPlaceholder('ค้นหาแบรนด์..').click();
   await page.getByPlaceholder('ค้นหาแบรนด์..').fill(BRAND_ID);
