@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 const URL = 'https://staging-bluestat-cms.devfullteam.tech/login';
 const EMAIL = 'suleemas.fua+55@fullteam.tech';
 const PASSWORD = 'Ying964232';
-const BRAND_ID = '557';//ying_currency3 420//297
-const OUTLET_ID = '1600'; //test_currency3 1474//1471
+const BRAND_ID = "297"; //ying_BS_onboarding//297
+const OUTLET_ID = "1471"; //ying_BS_onboarding//1471
 // Login utility function
 async function login(page: any) {
 await page.goto(URL, { timeout: 10000 });
