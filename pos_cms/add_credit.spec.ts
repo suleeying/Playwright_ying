@@ -35,6 +35,7 @@ test.describe("Login", () => {
     await page.getByRole("textbox").click();
     await page.getByRole("textbox").fill("add");
     await page.getByRole("button", { name: "บันทึก" }).click();
+    console.log('เติมสำเร็จ '+ Add_Credit+' บาท');
   });
 });
 
@@ -59,5 +60,6 @@ test.describe("Login", () => {
     await page.getByRole("textbox").click();
     await page.getByRole("textbox").fill("withdraw");
     await page.getByRole("button", { name: "บันทึก" }).click();
+    console.log('ถอนสำเร็จ '+ Withdraw_Credit+' บาท');
   });
 });
