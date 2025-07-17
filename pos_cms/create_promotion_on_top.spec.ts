@@ -11,7 +11,7 @@ async function login(page: any) {
   await page.getByRole("button", { name: "ลงชื่อเข้าใช้" }).click();
   await page.waitForLoadState("networkidle");
 }
-async function brand_and_outlet (page: any) {
+async function open_brand_and_outlet (page: any) {
     await page.waitForLoadState("networkidle"); // รอให้หน้าโหลดเสร็จและใช้ selector ที่แม่นยำมากขึ้น
     await page.waitForTimeout(5000);
     await page.getByText("ผู้ใช้งานสูงสุด").first().click(); // ลองใช้ first() เพื่อเลือก element แรกที่เจอ
@@ -22,7 +22,6 @@ async function brand_and_outlet (page: any) {
     await page.waitForTimeout(3000);
     await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
     await page.getByRole("button", { name: "" }).click();
-    await page.getByRole('tab', { name: 'โปรโมชันเสริม', exact: true }).click();
 }
 
 test.describe("Login", () => {
@@ -30,7 +29,8 @@ test.describe("Login", () => {
     const promotion_name = "โปรโมชันลด ";
     const discount = "10";// จำนวนทีส่วนลดที่ได้รับ
     await login(page);
-    await brand_and_outlet(page);
+    await open_brand_and_outlet(page);
+    await page.getByRole('tab', { name: 'โปรโมชันเสริม', exact: true }).click();
     await page.getByRole('button', { name: 'โปรโมชันเสริม' }).click();
     await page.locator('input[name="name"]').click();
     await page.locator('input[name="name"]').fill(promotion_name + discount + " บาท");
@@ -62,7 +62,8 @@ test.describe("Login", () => {
     const promotion_name = "โปรโมชันลด ";
     const discount = "10";// จำนวนทีส่วนลดที่ได้รับ
     await login(page);
-    await brand_and_outlet(page);
+    await open_brand_and_outlet(page);
+    await page.getByRole('tab', { name: 'โปรโมชันเสริม', exact: true }).click();
     await page.getByRole('button', { name: 'โปรโมชันเสริม' }).click();
     await page.locator('input[name="name"]').click();
     await page.locator('input[name="name"]').fill(promotion_name + discount + " %");
@@ -95,7 +96,8 @@ test.describe("Login", () => {
   test("create promotion on top กำหนดเองแบบจำนวนเงิน", async ({ page }) => {
     const promotion_name = "กำหนดเองแบบจำนวนเงิน";
     await login(page);
-    await brand_and_outlet(page);
+    await open_brand_and_outlet(page);
+    await page.getByRole('tab', { name: 'โปรโมชันเสริม', exact: true }).click();
     await page.getByRole('button', { name: 'โปรโมชันเสริม' }).click();
     await page.locator('input[name="name"]').click();
     await page.locator('input[name="name"]').fill(promotion_name);
@@ -125,7 +127,8 @@ test.describe("Login", () => {
     const promotion_name = "แถมสินค้า ";
     const category_name = 'Coffee'; // กำหนดหมวดหมู่ที่ต้องการใช้ในโปรโมชัน
     await login(page);
-    await brand_and_outlet(page);
+    await open_brand_and_outlet(page);
+    await page.getByRole('tab', { name: 'โปรโมชันเสริม', exact: true }).click();
     await page.getByRole('button', { name: 'โปรโมชันเสริม' }).click();
     await page.locator('input[name="name"]').click();
     await page.locator('input[name="name"]').fill(promotion_name + " หมวดหมู่ " + category_name);
