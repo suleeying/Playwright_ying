@@ -1,36 +1,19 @@
 import { test, expect } from "@playwright/test";
+import { login, open_brand_and_outlet } from '../config';
 const URL = "https://staging-bluestat-cms.devfullteam.tech/login";
 const EMAIL = "suleemas.fua+55@fullteam.tech";
 const PASSWORD = "Ying964232";
-const BRAND_ID = "607"; //ying_BS_onboardไม่มีเพดาน
-const OUTLET_ID = "1607"; //1607
+const BRAND_ID = "607";
+const OUTLET_ID = "1607";
 const Add_Credit = "1000";
 const Withdraw_Credit = "100";
 
-async function login(page: any) {
-  await page.goto(URL, { timeout: 10000 });
-  await page.locator("#email").fill(EMAIL);
-  await page.locator("#password").fill(PASSWORD);
-  await page.getByRole("button", { name: "ลงชื่อเข้าใช้" }).click();
-  await page.waitForLoadState("networkidle");
-}
-async function open_brand_and_outlet(page: any) {
-    await page.waitForLoadState("networkidle"); // รอให้หน้าโหลดเสร็จและใช้ selector ที่แม่นยำมากขึ้น
-    await page.waitForTimeout(5000);
-    await page.getByText("ผู้ใช้งานสูงสุด").first().click(); // ลองใช้ first() เพื่อเลือก element แรกที่เจอ
-    await page.getByPlaceholder("ค้นหาแบรนด์..").click();
-    await page.getByPlaceholder("ค้นหาแบรนด์..").fill(BRAND_ID);
-    await page.getByText(BRAND_ID).click();
-    await page.getByText("เปิด").click();
-    await page.waitForTimeout(3000);
-    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
-    await page.getByRole("button", { name: "" }).click();
-}
-
 test.describe("Login", () => {
   test("add credit", async ({ page }) => {
-    await login(page);
-    await open_brand_and_outlet(page);
+    await login(page, URL, EMAIL, PASSWORD);
+    await open_brand_and_outlet(page, BRAND_ID, OUTLET_ID);
+    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
+    await page.getByRole("button", { name: "" }).click();
     await page.getByRole("tab", { name: "จัดการเครดิต" }).click();
     await page.getByText("เติม/ถอน เครดิต").click();
     await page.getByRole("spinbutton").click();
@@ -38,14 +21,16 @@ test.describe("Login", () => {
     await page.getByRole("textbox").click();
     await page.getByRole("textbox").fill("add");
     await page.getByRole("button", { name: "บันทึก" }).click();
-    console.log('เติมสำเร็จ '+ Add_Credit+' เครดิต');
+    console.log('เติมสำเร็จ ' + Add_Credit + ' เครดิต');
   });
 });
 
 test.describe("Login", () => {
   test("withdraw credit", async ({ page }) => {
-    await login(page);
-    await open_brand_and_outlet(page);
+    await login(page, URL, EMAIL, PASSWORD);
+    await open_brand_and_outlet(page, BRAND_ID, OUTLET_ID);
+    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
+    await page.getByRole("button", { name: "" }).click();
     await page.getByRole("tab", { name: "จัดการเครดิต" }).click();
     await page.getByText("เติม/ถอน เครดิต").click();
     await page.locator("span").filter({ hasText: "ถอนเครดิต" }).locator("i").click();
@@ -54,6 +39,6 @@ test.describe("Login", () => {
     await page.getByRole("textbox").click();
     await page.getByRole("textbox").fill("withdraw");
     await page.getByRole("button", { name: "บันทึก" }).click();
-    console.log('ถอนสำเร็จ '+ Withdraw_Credit+' เครดิต');
+    console.log('ถอนสำเร็จ ' + Withdraw_Credit + ' เครดิต');
   });
 });

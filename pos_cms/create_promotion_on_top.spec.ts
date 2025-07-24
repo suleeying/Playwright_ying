@@ -1,35 +1,19 @@
 import { test, expect } from "@playwright/test";
+import { login, open_brand_and_outlet } from "../config";
 const URL = "https://staging-bluestat-cms.devfullteam.tech/login";
 const EMAIL = "suleemas.fua+55@fullteam.tech";
 const PASSWORD = "Ying964232";
-const BRAND_ID = "605"; //ying_BS_onboarding//297
-
-async function login(page: any) {
-  await page.goto(URL, { timeout: 10000 });
-  await page.locator("#email").fill(EMAIL);
-  await page.locator("#password").fill(PASSWORD);
-  await page.getByRole("button", { name: "ลงชื่อเข้าใช้" }).click();
-  await page.waitForLoadState("networkidle");
-}
-async function open_brand_and_outlet (page: any) {
-    await page.waitForLoadState("networkidle"); // รอให้หน้าโหลดเสร็จและใช้ selector ที่แม่นยำมากขึ้น
-    await page.waitForTimeout(5000);
-    await page.getByText("ผู้ใช้งานสูงสุด").first().click(); // ลองใช้ first() เพื่อเลือก element แรกที่เจอ
-    await page.getByPlaceholder("ค้นหาแบรนด์..").click();
-    await page.getByPlaceholder("ค้นหาแบรนด์..").fill(BRAND_ID);
-    await page.getByText(BRAND_ID).click();
-    await page.getByText("เปิด").click();
-    await page.waitForTimeout(3000);
-    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
-    await page.getByRole("button", { name: "" }).click();
-}
+const BRAND_ID = "607"; //ying_onboardingไม่มีเพดาน
+const OUTLET_ID = "1607"; 
 
 test.describe("Login", () => {
   test("create promotion on top ลด x บาท", async ({ page }) => {
     const promotion_name = "โปรโมชันลด ";
     const discount = "10";// จำนวนทีส่วนลดที่ได้รับ
-    await login(page);
-    await open_brand_and_outlet(page);
+    await login(page, URL, EMAIL, PASSWORD);
+    await open_brand_and_outlet(page, BRAND_ID, OUTLET_ID);
+    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
+    await page.getByRole("button", { name: "" }).click();
     await page.getByRole('tab', { name: 'โปรโมชันเสริม', exact: true }).click();
     await page.getByRole('button', { name: 'โปรโมชันเสริม' }).click();
     await page.locator('input[name="name"]').click();
@@ -61,8 +45,10 @@ test.describe("Login", () => {
   test("create promotion on top ลด x %", async ({ page }) => {
     const promotion_name = "โปรโมชันลด ";
     const discount = "10";// จำนวนทีส่วนลดที่ได้รับ
-    await login(page);
-    await open_brand_and_outlet(page);
+    await login(page, URL, EMAIL, PASSWORD);
+    await open_brand_and_outlet(page, BRAND_ID, OUTLET_ID);
+    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
+    await page.getByRole("button", { name: "" }).click();
     await page.getByRole('tab', { name: 'โปรโมชันเสริม', exact: true }).click();
     await page.getByRole('button', { name: 'โปรโมชันเสริม' }).click();
     await page.locator('input[name="name"]').click();
@@ -95,8 +81,10 @@ test.describe("Login", () => {
 test.describe("Login", () => {
   test("create promotion on top กำหนดเองแบบจำนวนเงิน", async ({ page }) => {
     const promotion_name = "กำหนดเองแบบจำนวนเงิน";
-    await login(page);
-    await open_brand_and_outlet(page);
+    await login(page, URL, EMAIL, PASSWORD);
+    await open_brand_and_outlet(page, BRAND_ID, OUTLET_ID);
+    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
+    await page.getByRole("button", { name: "" }).click();
     await page.getByRole('tab', { name: 'โปรโมชันเสริม', exact: true }).click();
     await page.getByRole('button', { name: 'โปรโมชันเสริม' }).click();
     await page.locator('input[name="name"]').click();
@@ -126,8 +114,10 @@ test.describe("Login", () => {
   test("create promotion on top แถมสินค้า", async ({ page }) => {
     const promotion_name = "แถมสินค้า ";
     const category_name = 'Coffee'; // กำหนดหมวดหมู่ที่ต้องการใช้ในโปรโมชัน
-    await login(page);
-    await open_brand_and_outlet(page);
+    await login(page, URL, EMAIL, PASSWORD);
+    await open_brand_and_outlet(page, BRAND_ID, OUTLET_ID);
+    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
+    await page.getByRole("button", { name: "" }).click();
     await page.getByRole('tab', { name: 'โปรโมชันเสริม', exact: true }).click();
     await page.getByRole('button', { name: 'โปรโมชันเสริม' }).click();
     await page.locator('input[name="name"]').click();

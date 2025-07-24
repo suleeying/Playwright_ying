@@ -1,28 +1,10 @@
 import { test, expect } from "@playwright/test";
+import { login, open_brand_and_outlet } from "../config"; // นำเข้า config ที่มีฟังก์ชัน login
 const URL = "https://staging-bluestat-cms.devfullteam.tech/login";
 const EMAIL = "suleemas.fua+55@fullteam.tech";
 const PASSWORD = "Ying964232";
-const BRAND_ID = "605"; //ying_BS_onboarding//297
-
-async function login(page: any) {
-  await page.goto(URL, { timeout: 10000 });
-  await page.locator("#email").fill(EMAIL);
-  await page.locator("#password").fill(PASSWORD);
-  await page.getByRole("button", { name: "ลงชื่อเข้าใช้" }).click();
-  await page.waitForLoadState("networkidle");
-}
-async function open_brand_and_outlet (page: any) {
-    await page.waitForLoadState("networkidle"); // รอให้หน้าโหลดเสร็จและใช้ selector ที่แม่นยำมากขึ้น
-    await page.waitForTimeout(5000);
-    await page.getByText("ผู้ใช้งานสูงสุด").first().click(); // ลองใช้ first() เพื่อเลือก element แรกที่เจอ
-    await page.getByPlaceholder("ค้นหาแบรนด์..").click();
-    await page.getByPlaceholder("ค้นหาแบรนด์..").fill(BRAND_ID);
-    await page.getByText(BRAND_ID).click();
-    await page.getByText("เปิด").click();
-    await page.waitForTimeout(3000);
-    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
-    await page.getByRole("button", { name: "" }).click();
-}
+const BRAND_ID = "607"; //ying_onboardingไม่มีเพดาน
+const OUTLET_ID = "1607"; 
 
 test.describe("Login", () => {
   test("create main promotion 10 แถม 1", async ({ page }) => {
@@ -30,8 +12,10 @@ test.describe("Login", () => {
     const quantity = "10";// จำนวนที่ต้องซื้อเพื่อรับโปรโมชั่น
     const free_gift = "1";// จำนวนของแถมที่ได้รับ
     const category_name = 'Coffee'; // กำหนดหมวดหมู่ที่ต้องการใช้ในโปรโมชัน
-    await login(page);
-    await open_brand_and_outlet(page);
+    await login(page, URL, EMAIL, PASSWORD);
+    await open_brand_and_outlet(page, BRAND_ID, OUTLET_ID);
+    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
+    await page.getByRole("button", { name: "" }).click();
     await page.getByRole('tab', { name: 'โปรโมชัน', exact: true }).click();
     await page.getByRole('button', { name: 'สร้างแคมเปญ' }).click();
     await page.locator('input[name="name"]').click();
@@ -54,7 +38,10 @@ test.describe("Login", () => {
     //หน้าเงื่อนไข
     await page.locator('label').filter({ hasText: 'หมวดหมู่' }).locator('i').click();
     await page.locator('.ant-select-selection-overflow').click();
-    await page.getByText('[หมวดหมู่สาขา] '+category_name).click();
+    await page.waitForTimeout(5000);
+    
+    await page.locator('.ant-select-item.ant-select-item-option.ant-select-item-option-active > .ant-select-item-option-content').click();
+ 
     await page.locator('span').filter({ hasText: 'ซื้อสินค้าให้ครบจำนวนชิ้น' }).locator('i').click();
     await page.getByRole('tabpanel', { name: 'โปรโมชัน' }).getByPlaceholder('0').click();
     await page.getByRole('tabpanel', { name: 'โปรโมชัน' }).getByPlaceholder('0').fill(quantity);
@@ -74,8 +61,10 @@ test.describe("Login", () => {
     const price = "100";// จำนวนที่ต้องซื้อเพื่อรับโปรโมชั่น
     const discount = "10";// จำนวนทีส่วนลดที่ได้รับ
     const category_name = 'Coffee'; // กำหนดหมวดหมู่ที่ต้องการใช้ในโปรโมชัน
-    await login(page);
-    await open_brand_and_outlet(page);
+    await login(page, URL, EMAIL, PASSWORD);
+    await open_brand_and_outlet(page, BRAND_ID, OUTLET_ID);
+    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
+    await page.getByRole("button", { name: "" }).click();
     await page.getByRole('tab', { name: 'โปรโมชัน', exact: true }).click();
     await page.getByRole('button', { name: 'สร้างแคมเปญ' }).click();
     await page.locator('input[name="name"]').click();
@@ -118,8 +107,10 @@ test.describe("Login", () => {
     const price = "100";// จำนวนที่ต้องซื้อเพื่อรับโปรโมชั่น
     const discount = "10";// จำนวนทีส่วนลดที่ได้รับ
     const category_name = 'Coffee'; // กำหนดหมวดหมู่ที่ต้องการใช้ในโปรโมชัน
-    await login(page);
-    await open_brand_and_outlet(page);
+    await login(page, URL, EMAIL, PASSWORD);
+    await open_brand_and_outlet(page, BRAND_ID, OUTLET_ID);
+    await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
+    await page.getByRole("button", { name: "" }).click();
     await page.getByRole('tab', { name: 'โปรโมชัน', exact: true }).click();
     await page.getByRole('button', { name: 'สร้างแคมเปญ' }).click();
     await page.locator('input[name="name"]').click();
