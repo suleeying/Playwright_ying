@@ -16,6 +16,4 @@ export async function open_brand_and_outlet(page: any, BRAND_ID: string, OUTLET_
   await page.getByText(BRAND_ID).click();
   await page.getByText("เปิด").click();
   await page.waitForTimeout(3000);
-  // await page.getByRole("link", { name: " สาขาทั้งหมด" }).click();
-  // await page.getByRole("button", { name: "" }).click();
 }
