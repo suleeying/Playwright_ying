@@ -3,7 +3,7 @@ import { login,open_brand_and_outlet } from '../config';
 const URL = 'https://staging-bluestat-cms.devfullteam.tech/login';
 const EMAIL = 'suleemas.fua+55@fullteam.tech';
 const PASSWORD = 'Ying964232';
-const BRAND_ID = "A607"; //ying_BS_onboardไม่มีเพดาน
+const BRAND_ID = "A607"; // ying_BS_onboard ไม่มีเพดาน
 const OUTLET_ID = "1607"; //1607
 
 test.describe('Login', () => {

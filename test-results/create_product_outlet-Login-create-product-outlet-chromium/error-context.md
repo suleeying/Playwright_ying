@@ -1,0 +1,415 @@
+# Page snapshot
+
+```yaml
+- alert: ลงชื่อเข้าใช้สำเร็จ
+- button "close"
+- navigation:
+  - list:
+    - listitem:  ผู้ใช้งานสูงสุด 
+- textbox "ค้นหา.."
+- text:   ผลการค้นหา
+- table
+- list:
+  - listitem:
+    - heading "เลือกแบรนด์  สร้างแบรนด์ใหม่" [level=3]:
+      - text: เลือกแบรนด์
+      - button " สร้างแบรนด์ใหม่"
+- list:
+  - listitem:
+    - textbox "ค้นหาแบรนด์.."
+    - text: 
+- list:
+  - listitem:  ผู้ใช้งานสูงสุด 
+  - listitem: " A788 : brand_name20250908_131052 กำลังใช้งาน"
+  - listitem: " A787 : brand_name20250908_130304 กำลังใช้งาน"
+  - listitem: " A786 : brand_name20250908_105554 กำลังใช้งาน"
+  - listitem: " A785 : brand_name20250904_175107 กำลังใช้งาน"
+  - listitem: " A784 : brand_name20250904_173216 กำลังใช้งาน"
+  - listitem: " A783 : brand_bdg_20250904_172522 กำลังใช้งาน"
+  - listitem: " A782 : brand_bdg_20250904_172328 กำลังใช้งาน"
+  - listitem: " A781 : brand_bdg_20250904_160006 กำลังใช้งาน"
+  - listitem: " A780 : brand_bdg_20250904_151429 กำลังใช้งาน"
+  - listitem: " A779 : brand_name20250904_144644 กำลังใช้งาน"
+  - listitem: " A778 : brand_name20250904_144342 กำลังใช้งาน"
+  - listitem: " A777 : brand_name20250904_135117 กำลังใช้งาน"
+  - listitem: " A776 : brand_name20250904_122809 กำลังใช้งาน"
+  - listitem: " A775 : brand_name20250904_121310 กำลังใช้งาน"
+  - listitem: " A774 : brand_name20250904_114413 กำลังใช้งาน"
+  - listitem: " A773 : brand_name20250904_113838 กำลังใช้งาน"
+  - listitem: " A772 : brand_name20250904_102651 กำลังใช้งาน"
+  - listitem: " A771 : brand_name20250904_102449 กำลังใช้งาน"
+  - listitem: " A770 : brand_name20250904_102416 กำลังใช้งาน"
+  - listitem: " A769 : brand_name20250904_100920 กำลังใช้งาน"
+  - listitem: " A768 : brand_name20250904_100920 กำลังใช้งาน"
+  - listitem: " A767 : brand_name20250904_100920 กำลังใช้งาน"
+  - listitem: " A766 : brand_name20250904_100920 กำลังใช้งาน"
+  - listitem: " A765 : brand_name20250904_100724 กำลังใช้งาน"
+  - listitem: " A764 : brand_name20250904_094436 กำลังใช้งาน"
+  - listitem: " A763 : brand_name20250904_094200 กำลังใช้งาน"
+  - listitem: " A762 : brand_name20250904_094131 กำลังใช้งาน"
+  - listitem: " A761 : brand_name20250904_093704 กำลังใช้งาน"
+  - listitem: " A760 : brand_name20250903_135656 กำลังใช้งาน"
+  - listitem: " A759 : brand_name20250903_135656 กำลังใช้งาน"
+  - listitem: " A758 : brand_name20250903_135656 กำลังใช้งาน"
+  - listitem: " A757 : brand_name20250903_135656 กำลังใช้งาน"
+  - listitem: " A756 : brand_name20250903_135656 กำลังใช้งาน"
+  - listitem: " A755 : brand_name20250903_135656 กำลังใช้งาน"
+  - listitem: " A754 : brand_name20250903_135447 กำลังใช้งาน"
+  - listitem: " A753 : brand_name20250903_135144 กำลังใช้งาน"
+  - listitem: " A694 : brand_test_material กำลังใช้งาน"
+  - listitem: " A693 : brand_test_material_2 กำลังใช้งาน"
+  - listitem: " A625 : Aom กำลังใช้งาน"
+  - listitem: " A618 : Aom กำลังใช้งาน"
+  - listitem: " A617 : Fanta กำลังใช้งาน"
+  - listitem: " A616 : DongTest กำลังใช้งาน"
+  - listitem: " A607 : แบรนด์ying_onไม่มีเพดาน กำลังใช้งาน"
+  - listitem: " A606 : ทดสอบเครดิต1 กำลังใช้งาน"
+  - listitem: " A605 : ying_BS_onboarding04 กำลังใช้งาน"
+  - listitem: " A604 : ying_BS_onboarding03 กำลังใช้งาน"
+  - listitem: " A557 : ying_BS_onboarding02 กำลังใช้งาน"
+  - listitem: " A556 : ying_test002 กำลังใช้งาน"
+  - listitem: " A555 : brand_bdg_20250624_144231 กำลังใช้งาน"
+  - listitem: " A554 : ne2 กำลังใช้งาน"
+  - listitem: " A553 : New กลุ่มร้านค้า : 133 กำลังใช้งาน"
+  - listitem: " A516 : iiiiiii กำลังใช้งาน"
+  - listitem: " A515 : ilada515 กำลังใช้งาน"
+  - listitem: " A514 : brand_bdg_20250616_110609 กำลังใช้งาน"
+  - listitem: " A513 : ร้านกระเพราโคตร กำลังใช้งาน"
+  - listitem: " A512 : restaurant_hackathon_02 กำลังใช้งาน"
+  - listitem: " A511 : supplier_hackathon กำลังใช้งาน"
+  - listitem: " A510 : restaurant_hackathon กำลังใช้งาน"
+  - listitem: " A509 : Hackathon กำลังใช้งาน"
+  - listitem: " A508 : brand credit 13 กำลังใช้งาน"
+  - listitem: " A507 : brand credit 12 กำลังใช้งาน"
+  - listitem: " A506 : brand credit 11 กำลังใช้งาน"
+  - listitem: " A505 : brand credit 10 กำลังใช้งาน"
+  - listitem: " A504 : brand credit 9 กำลังใช้งาน"
+  - listitem: " A503 : brand credit 8 กำลังใช้งาน"
+  - listitem: " A502 : brand credit 7 กำลังใช้งาน"
+  - listitem: " A501 : brand credit 6 กำลังใช้งาน"
+  - listitem: " A500 : brand credit 5 กำลังใช้งาน"
+  - listitem: " A499 : brand credit 4 กำลังใช้งาน"
+  - listitem: " A498 : brand credit 3 กำลังใช้งาน"
+  - listitem: " A497 : brand credit 2 กำลังใช้งาน"
+  - listitem: " A464 : Nut Fullteam กำลังใช้งาน"
+  - listitem: " A459 : ซูชิเน่า กำลังใช้งาน"
+  - listitem: " A447 : Potion shop กำลังใช้งาน"
+  - listitem: " A446 : robot กำลังใช้งาน"
+  - listitem: " A435 : Kanoom_groupP กำลังใช้งาน"
+  - listitem: " A422 : ying_test_kaiwan กำลังใช้งาน"
+  - listitem: " A421 : dada กำลังใช้งาน"
+  - listitem: " A420 : ying_currency3 กำลังใช้งาน"
+  - listitem: " A419 : PAO-BLUESTAT-CURRENCY กำลังใช้งาน"
+  - listitem: " A375 : yingtestสกุลเงิน2 กำลังใช้งาน"
+  - listitem: " A364 : KHR CURRENCY กำลังใช้งาน"
+  - listitem: " A363 : THB CURRENCY กำลังใช้งาน"
+  - listitem: " A362 : c กำลังใช้งาน"
+  - listitem: " A361 : d กำลังใช้งาน"
+  - listitem: " A360 : dd กำลังใช้งาน"
+  - listitem: " A359 : TT กำลังใช้งาน"
+  - listitem: " A358 : fdd กำลังใช้งาน"
+  - listitem: " A357 : PaoGGZ กำลังใช้งาน"
+  - listitem: " A356 : yingtestสกุลเงิน1 กำลังใช้งาน"
+  - listitem: " A355 : TEST CURRENCY กำลังใช้งาน"
+  - listitem: " A354 : TEST CURRENCY กำลังใช้งาน"
+  - listitem: " A297 : ying_BS_onboarding กำลังใช้งาน"
+  - listitem: " A289 : test newregisvat กำลังใช้งาน"
+  - listitem: " A288 : test registvat กำลังใช้งาน"
+  - listitem: " A287 : จดทะเบียน กำลังใช้งาน"
+  - listitem: " A286 : พาร์ทเนอร์test กำลังใช้งาน"
+  - listitem: " A285 : เทส กำลังใช้งาน"
+  - listitem: " A284 : yingเทสจอ2 กำลังใช้งาน"
+  - listitem: " A281 : ds กำลังใช้งาน"
+  - listitem: " A280 : oko กำลังใช้งาน"
+  - listitem: " A279 : TakkyTest กำลังใช้งาน"
+  - listitem: " A278 : STG: TakkyTest255 กำลังใช้งาน"
+  - listitem: " A277 : STG-Takky2 กำลังใช้งาน"
+  - listitem: " A276 : STG-TakkyTest กำลังใช้งาน"
+  - listitem: " A275 : Carter Bridges กำลังใช้งาน"
+  - listitem: " A274 : Kato Landry กำลังใช้งาน"
+  - listitem: " A273 : Ferris Osborn กำลังใช้งาน"
+  - listitem: " A272 : Caryn Silva กำลังใช้งาน"
+  - listitem: " A271 : ญพาร์ทเนอร์002 กำลังใช้งาน"
+  - listitem: " A270 : ร้านญพาร์ทเนอร์ใหม่ กำลังใช้งาน"
+  - listitem: " A241 : แก้ม กำลังใช้งาน"
+  - listitem: " A239 : MOS TESTTTT กำลังใช้งาน"
+  - listitem: " A238 : TESTTTTT กำลังใช้งาน"
+  - listitem: " A237 : TEST กำลังใช้งาน"
+  - listitem: " A236 : test email 5 กำลังใช้งาน"
+  - listitem: " A235 : TEST กำลังใช้งาน"
+  - listitem: " A234 : test email4 กำลังใช้งาน"
+  - listitem: " A233 : test email 3 กำลังใช้งาน"
+  - listitem: " A232 : test email 2 กำลังใช้งาน"
+  - listitem: " A231 : หญิงสมาชิกแบรนด์ กำลังใช้งาน"
+  - listitem: " A230 : TEST กำลังใช้งาน"
+  - listitem: " A229 : test mail กำลังใช้งาน"
+  - listitem: " A228 : asdf กำลังใช้งาน"
+  - listitem: " A227 : AAAA กำลังใช้งาน"
+  - listitem: " A226 : MOS TEST กำลังใช้งาน"
+  - listitem: " A225 : WiLa BrandSTG กำลังใช้งาน"
+  - listitem: " A224 : แบรนด์หญิง กำลังใช้งาน"
+  - listitem: " A223 : คาเฟ่ ปากเกร็ด กำลังใช้งาน"
+  - listitem: " A222 : ลองระบบ กำลังใช้งาน"
+  - listitem: " A221 : uouso กำลังใช้งาน"
+  - listitem: " A220 : คำแพงมังกรฟ้า กำลังใช้งาน"
+  - listitem: " A219 : Amazon กำลังใช้งาน"
+  - listitem: " A218 : BLUESTAT ร้านค้าตัวอย่าง กำลังใช้งาน"
+  - listitem: " A217 : test กำลังใช้งาน"
+  - listitem: " A216 : pao-test กำลังใช้งาน"
+  - listitem: " A215 : yingbrand กำลังใช้งาน"
+  - listitem: " A214 : เทสstag กำลังใช้งาน"
+  - listitem: " A213 : ไปกันใหญ่ กำลังใช้งาน"
+  - listitem: " A212 : pre-staging กำลังใช้งาน"
+  - listitem: " A211 : Wila Na กำลังใช้งาน"
+  - listitem: " A210 : aaa กำลังใช้งาน"
+  - listitem: " A209 : PaoGGB กำลังใช้งาน"
+  - listitem: " A208 : kanoom กำลังใช้งาน"
+  - listitem: " A207 : Pikano กำลังใช้งาน"
+  - listitem: " A206 : Friendindeed Cafe กำลังใช้งาน"
+  - listitem: " A205 : ป็อบอาย แบรนด์ กำลังใช้งาน"
+  - listitem: " A204 : มังกรฟ้า มินิมาทร์ท กำลังใช้งาน"
+  - listitem: " A203 : Dragon Restaurant กำลังใช้งาน"
+  - listitem: " A202 : Benz Pegasus กำลังใช้งาน"
+  - listitem: " A201 : Classy Brand กำลังใช้งาน"
+  - listitem: " A200 : เวธกาขายทุกอย่าง กำลังใช้งาน"
+  - listitem: " A199 : TOEY BST กำลังใช้งาน"
+  - listitem: " A198 : ลูกชิ้นมังกรฟ้า กำลังใช้งาน"
+  - listitem: " A197 : Mr.aek กำลังใช้งาน"
+  - listitem: " A196 : BLUESTAT นนทบุรี 01 กำลังใช้งาน"
+  - listitem: " A195 : chi meme cafe กำลังใช้งาน"
+  - listitem: " A194 : Brand Hall กำลังใช้งาน"
+  - listitem: " A193 : ying01_outlet กำลังใช้งาน"
+  - listitem: " A192 : บรูดาวาฟเฟิล กำลังใช้งาน"
+  - listitem: " A191 : Q Smoothie กำลังใช้งาน"
+  - listitem: " A190 : ตลาดนัดเจ้าพระยา กำลังใช้งาน"
+  - listitem: " A189 : WL-Brand กำลังใช้งาน"
+  - listitem: " A188 : Blue Dragon กำลังใช้งาน"
+  - listitem: " A187 : sunxunzun kbank กำลังใช้งาน"
+  - listitem: " A186 : sun xun zun สาขา 1 กำลังใช้งาน"
+  - listitem: " A185 : ตลาดนัดบางบัวทอง กำลังใช้งาน"
+  - listitem: " A184 : superbran1 กำลังใช้งาน"
+  - listitem: " A183 : mss กำลังใช้งาน"
+  - listitem: " 1274 : BAS_2 กำลังใช้งาน"
+  - listitem: " A180 : ying_test กำลังใช้งาน"
+  - listitem: " A179 : Pao-Bluestat กำลังใช้งาน"
+  - listitem: " A178 : Ying_Brand_test6_Brand กำลังใช้งาน"
+  - listitem: " A177 : banlnwza brand กำลังใช้งาน"
+  - listitem: " A176 : brand_color_themev1 กำลังใช้งาน"
+  - listitem: " A175 : abcdd กำลังใช้งาน"
+  - listitem: " A174 : sayfatay1234+899_1 กำลังใช้งาน"
+  - listitem: " A173 : supermanv2 กำลังใช้งาน"
+  - listitem: " 1264 : BAS กำลังใช้งาน"
+  - listitem: " 1265 : Wila Brand กำลังใช้งาน"
+  - listitem: " 1280 : Ying_Brand_test5_Outlet กำลังใช้งาน"
+  - listitem: " A169 : Zachery Crosby กำลังใช้งาน"
+  - listitem: " 1262 : test4 กำลังใช้งาน"
+  - listitem: " A167 : test outlet กำลังใช้งาน"
+  - listitem: " A166 : test3 กำลังใช้งาน"
+  - listitem: " A165 : test2 กำลังใช้งาน"
+  - listitem: " A164 : test กำลังใช้งาน"
+  - listitem: " A163 : aaa กำลังใช้งาน"
+  - listitem: " A162 : test-delivery กำลังใช้งาน"
+  - listitem: " A161 : BG_Ying กำลังใช้งาน"
+  - listitem: " A160 : ssuperbrand กำลังใช้งาน"
+  - listitem: " A159 : stg-dev-03 กำลังใช้งาน"
+  - listitem: " A158 : stg-dev-02 กำลังใช้งาน"
+  - listitem: " A157 : STG:BrandTakky กำลังใช้งาน"
+  - listitem: " A156 : abc004 กำลังใช้งาน"
+  - listitem: " A155 : abc003 กำลังใช้งาน"
+  - listitem: " A154 : abc002 กำลังใช้งาน"
+  - listitem: " A153 : Stg:TakkyBrand(New) กำลังใช้งาน"
+  - listitem: " 1256 : Stg:TakkyBrand(Existing) กำลังใช้งาน"
+  - listitem: " A151 : stg_ff_02 กำลังใช้งาน"
+  - listitem: " A150 : stg_ff_01 กำลังใช้งาน"
+  - listitem: " 1267 : Bluestat (Demo) กำลังใช้งาน"
+  - listitem: " 1238 : BDG-BlueStat-Demo กำลังใช้งาน"
+  - listitem: " 1246 : BluestatDEMO กำลังใช้งาน"
+  - listitem: " 1236 : Nuy-Thitiya กำลังใช้งาน"
+  - listitem: " A145 : testaabbb กำลังใช้งาน"
+  - listitem: " A144 : superman BD A2 กำลังใช้งาน"
+  - listitem: " A143 : STG-TakkyBDG กำลังใช้งาน"
+  - listitem: " A142 : superman BD กำลังใช้งาน"
+  - listitem: " A141 : aa กำลังใช้งาน"
+  - listitem: " A140 : ใบเตยลองงงง กำลังใช้งาน"
+  - listitem: " A139 : hello กำลังใช้งาน"
+  - listitem: " 1237 : BG_ying กำลังใช้งาน"
+  - listitem: " 1221 : BrandPlatform1 กำลังใช้งาน"
+  - listitem: " A136 : ขนมหวานบ้านยิ้ม กำลังใช้งาน"
+  - listitem: " A135 : Furii (ทดสอบ) กำลังใช้งาน"
+  - listitem: " A134 : DOG กำลังใช้งาน"
+  - listitem: " A133 : SODA กำลังใช้งาน"
+  - listitem: " A132 : ทดสอบ ปัดเศษ กำลังใช้งาน"
+  - listitem: " A131 : ทดสอบ Service charge กำลังใช้งาน"
+  - listitem: " A130 : tcs กำลังใช้งาน"
+  - listitem: " A129 : test create กำลังใช้งาน"
+  - listitem: " A128 : TEST SC กำลังใช้งาน"
+  - listitem: " A127 : sxz กำลังใช้งาน"
+  - listitem: " A126 : โรตี กำลังใช้งาน"
+  - listitem: " A125 : Pikano กำลังใช้งาน"
+  - listitem: " A124 : A Gorilla กำลังใช้งาน"
+  - listitem: " A123 : TakkyBrand กำลังใช้งาน"
+  - listitem: " 1227 : Nuythiti กำลังใช้งาน"
+  - listitem: " A121 : ซูชิเน่า กำลังใช้งาน"
+  - listitem: " A120 : P กำลังใช้งาน"
+  - listitem: " A119 : PaoGGZ กำลังใช้งาน"
+  - listitem: " A118 : ตงซมซานซูชิ กำลังใช้งาน"
+  - listitem: " A117 : PaoM กำลังใช้งาน"
+  - listitem: " A116 : eazyPOS (ทดสอบ) กำลังใช้งาน"
+  - listitem: " A115 : UTA กำลังใช้งาน"
+  - listitem: " A114 : ชวนชิม_test กำลังใช้งาน"
+  - listitem: " A113 : GMM Grammy (ทดสอบ) กำลังใช้งาน"
+  - listitem: " A112 : AbigThings กำลังใช้งาน"
+  - listitem: " A111 : Parry Hotter Coffee กำลังใช้งาน"
+  - listitem: " A110 : เครปไส้ทะลัก กำลังใช้งาน"
+  - listitem: " A109 : POOK Japanese Food กำลังใช้งาน"
+  - listitem: " A108 : ข้าวซอยลำปาง กำลังใช้งาน"
+  - listitem: " A107 : POOK Sushi กำลังใช้งาน"
+  - listitem: " A106 : NUTO Tonkatsu กำลังใช้งาน"
+  - listitem: " A105 : POS-Shabu NUTO กำลังใช้งาน"
+  - listitem: " A104 : THK POS กำลังใช้งาน"
+  - listitem: " A103 : แบรนด์ Inventory กำลังใช้งาน"
+  - listitem: " A102 : บอยค่ะ กำลังใช้งาน"
+  - listitem: " A101 : App กำลังใช้งาน"
+  - listitem: " A100 : ying กำลังใช้งาน"
+  - listitem: " A099 : pet-import-2 กำลังใช้งาน"
+  - listitem: " A098 : pet-brand-1 กำลังใช้งาน"
+  - listitem: " A097 : boy brand 222 กำลังใช้งาน"
+  - listitem: " A096 : Everest ice cream (เอเวอร์เรส ไอศครีม) กำลังใช้งาน"
+  - listitem: " A095 : test-delivery-two กำลังใช้งาน"
+  - listitem: " A094 : test-delivery กำลังใช้งาน"
+  - listitem: " A093 : The Kitchenhub center #1 กำลังใช้งาน"
+  - listitem: " A092 : deliveryBy กำลังใช้งาน"
+  - listitem: " A091 : POS-NUT-2 กำลังใช้งาน"
+  - listitem: " A090 : POS-NUTOsushi กำลังใช้งาน"
+  - listitem: " A089 : POS-sushi กำลังใช้งาน"
+  - listitem: " A088 : ดีจัง ทดสอบสินค้า กำลังใช้งาน"
+  - listitem: " A087 : test-import-product-3 กำลังใช้งาน"
+  - listitem: " A086 : test-import-product-pet-2 กำลังใช้งาน"
+  - listitem: " A085 : test-import-product-pet กำลังใช้งาน"
+  - listitem: " A084 : ธงฟ้า กำลังใช้งาน"
+  - listitem: " : KittipatFB กำลังใช้งาน"
+  - listitem: " : เจปัง หัตตะวัน กำลังใช้งาน"
+  - listitem: " : SunLineHeadOffice12102021 กำลังใช้งาน"
+  - listitem: " : Shop Name กำลังใช้งาน"
+  - listitem: " A074 : Mono_Sushi กำลังใช้งาน"
+  - listitem: " : Google Brand กำลังใช้งาน"
+  - listitem: " A072 : ซมซานซูชิ Test Report กำลังใช้งาน"
+  - listitem: " : Facebook กำลังใช้งาน"
+  - listitem: " A068 : BKK Life - edit กำลังใช้งาน"
+  - listitem: " A067 : Kitchen HUB กำลังใช้งาน"
+  - listitem: " A056 : SEOUL LO กำลังใช้งาน"
+  - listitem: " A055 : Test Remove outlet กำลังใช้งาน"
+  - listitem: " A030 : Kouen Sushi Bar กำลังใช้งาน"
+  - listitem: " A029 : sun_test_robot_62025 กำลังใช้งาน"
+  - listitem: " A028 : TNN sushi กำลังใช้งาน"
+  - listitem: " A027 : NNC Sushi กำลังใช้งาน"
+  - listitem: " A014 : karaoke shop กำลังใช้งาน"
+  - listitem: " A013 : AI กำลังใช้งาน"
+  - listitem: " A011 : Meaw_Meaw กำลังใช้งาน"
+  - listitem: " A010 : Pooky_Sushi กำลังใช้งาน"
+  - listitem: " A009 : testcreatebrandno2 กำลังใช้งาน"
+  - listitem: " A008 : testcreatebandno1 กำลังใช้งาน"
+  - listitem: " A007 : Gamerstop กำลังใช้งาน"
+  - listitem: " A006 : test brand กำลังใช้งาน"
+  - listitem: " A005 : i_sushi กำลังใช้งาน"
+  - listitem: " A004 : Nutnut sushi กำลังใช้งาน"
+  - listitem: " A003 : sun_test_brand_01 กำลังใช้งาน"
+  - listitem: " A002 : Kaizen Sushi & Hibashi กำลังใช้งาน"
+  - listitem: " A001 : ซมซานซูชิ กำลังใช้งาน"
+- list:
+  - listitem:
+    - button "ปิด"
+    - button "เปิด"
+- list:
+  - listitem:
+    - link "Chat":
+      - /url: "#Chat-one"
+  - listitem:
+    - link "List":
+      - /url: "#Chat-list"
+  - listitem:
+    - link "Groups":
+      - /url: "#Chat-groups"
+  - text: 
+- separator
+- list:
+  - listitem: KG Hello, John What is the update on Project X?
+  - listitem:
+    - img "avatar"
+    - text: Hi, Alizee It is almost completed. I will send you an email later today.
+  - listitem: KG That's great. Will catch you in evening.
+  - listitem:
+    - img "avatar"
+    - text: Sure we'will have a blast today.
+- link "":
+  - /url: /
+- textbox "Enter text here..."
+- link "BLUESTAT staging":
+  - /url: /
+- img "User Profile"
+- text: Welcome, Super Admin
+- button "yingSupper admin":
+  - strong: yingSupper admin
+- navigation:
+  - list:
+    - listitem:
+      - link "หน้าหลัก":
+        - /url: /
+    - listitem: จัดการระบบ
+    - listitem:
+      - link " ปิดระบบชั่วคราว":
+        - /url: /maintanance-brand
+    - listitem:
+      - link " สิทธิการใช้งาน POS":
+        - /url: /pos-permission
+    - listitem:
+      - link " POS ทั้งหมด":
+        - /url: /pos/list
+    - listitem: จัดการสินค้าระดับมาสเตอร์
+    - listitem:
+      - link " สินค้า":
+        - /url: /products
+    - listitem:
+      - link " หมวดหมู่สินค้า":
+        - /url: /categories
+    - listitem:
+      - link " รูปสัญลักษณ์":
+        - /url: /symbolics
+    - listitem:
+      - link " ประเภทสินค้า":
+        - /url: /product-type
+    - listitem: จัดการแม่แบบระดับมาสเตอร์
+    - listitem:
+      - link " เมนูเริ่มต้นสำหรับร้านค้า":
+        - /url: /templates
+    - listitem:
+      - link " ช่องทางการชำระเงินอื่นๆ":
+        - /url: /other-payment-channel
+    - listitem: การจัดการผู้ใช้งาน
+    - listitem:
+      - link " พนักงาน":
+        - /url: /staff
+    - listitem:
+      - link " ทีม":
+        - /url: /team
+    - listitem:
+      - link " สิทธิการใช้งาน":
+        - /url: /roleandpermission
+    - listitem:
+      - link " SSO Profile":
+        - /url: /sso-profile
+    - listitem:
+      - link "การจัดการแบรนด์":
+        - /url: /null
+    - listitem:
+      - link " แบรนด์":
+        - /url: /brand
+    - listitem:
+      - link "การจัดการโปรโมชัน":
+        - /url: /null
+    - listitem:
+      - link " รายละเอียดแคมเปญ":
+        - /url: /campaign
+- heading "Welcome to BLUESTAT." [level=1]
+- img
+```

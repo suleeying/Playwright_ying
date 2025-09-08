@@ -7,8 +7,8 @@ const BRAND_ID = "607"; //ying_onboardingไม่มีเพดาน
 const OUTLET_ID = "1607"; 
 const category_name_outlet = 'Coffee'; // หมวดหมู่ที่ต้องการเลือก
 const category_name_brand = 'หมวดหมู่แบรนด์';
-const product_number = 3; //loop กี่รอบ
-const product_name_start_number = 1;
+const product_number = 1; //loop กี่รอบ
+const product_name_start_number = 2; //เริ่มที่ชื่อสินค้าเลขอะไร
 
 test.describe('Login', () => {
   test('create product outlet', async ({ page }) => {
@@ -28,6 +28,8 @@ test.describe('Login', () => {
         await page.getByText('เพิ่มสินค้าสินค้าของ :POSDeliveryImage+Upload Imageรองรับไฟล์ .png .jpg .jpeg').click();
         await page.locator('.ant-select.form-control > .ant-select-selector > .ant-select-selection-overflow').click();
         await page.getByText('[หมวดหมู่สาขา] '+ category_name_outlet).click();
+        await page.locator('input[name="price"]').click();
+        await page.locator('input[name="price"]').fill('50');
         await page.getByRole('textbox', { name: 'ชื่อ ( ภาษาไทย ) *' }).click();
         await page.getByRole('textbox', { name: 'ชื่อ ( ภาษาไทย ) *' }).fill('สินค้า'+i);
         await page.getByRole('textbox', { name: 'ชื่อ ( English ) *' }).click();
@@ -36,8 +38,6 @@ test.describe('Login', () => {
         await page.getByRole('textbox', { name: 'รายละเอียด ( ภาษาไทย ) *' }).fill('สินค้า'+i);
         await page.getByRole('textbox', { name: 'รายละเอียด ( English ) *' }).click();
         await page.getByRole('textbox', { name: 'รายละเอียด ( English ) *' }).fill('สินค้า'+i);
-        await page.locator('input[name="price"]').click();
-        await page.locator('input[name="price"]').fill('50');
         await page.getByRole('button', { name: 'บันทึก' }).nth(1).click();
         await page.waitForLoadState('networkidle', { timeout: 60000 });// รอให้การบันทึกเสร็จสิ้น - ใช้ waitForLoadState แทน waitForTimeout
         await page.waitForTimeout(5000);
@@ -62,6 +62,8 @@ test.describe('Login', () => {
           await page.getByText('เพิ่มสินค้าสินค้าของ :POSDeliveryImage+Upload Imageรองรับไฟล์ .png .jpg .jpeg').click();
           await page.locator('.ant-select.form-control > .ant-select-selector > .ant-select-selection-overflow').click();
           await page.getByText('[หมวดหมู่แบรนด์] '+ category_name_brand).click();
+          await page.locator('input[name="price"]').click();
+          await page.locator('input[name="price"]').fill('50');
           await page.getByRole('textbox', { name: 'ชื่อ ( ภาษาไทย ) *' }).click();
           await page.getByRole('textbox', { name: 'ชื่อ ( ภาษาไทย ) *' }).fill('สินค้า'+i);
           await page.getByRole('textbox', { name: 'ชื่อ ( English ) *' }).click();
@@ -70,8 +72,6 @@ test.describe('Login', () => {
           await page.getByRole('textbox', { name: 'รายละเอียด ( ภาษาไทย ) *' }).fill('สินค้า'+i);
           await page.getByRole('textbox', { name: 'รายละเอียด ( English ) *' }).click();
           await page.getByRole('textbox', { name: 'รายละเอียด ( English ) *' }).fill('สินค้า'+i);
-          await page.locator('input[name="price"]').click();
-          await page.locator('input[name="price"]').fill('50');
           await page.getByRole('button', { name: 'บันทึก' }).nth(1).click();
           await page.waitForLoadState('networkidle', { timeout: 60000 });// รอให้การบันทึกเสร็จสิ้น - ใช้ waitForLoadState แทน waitForTimeout
           await page.waitForTimeout(5000);
