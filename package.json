@@ -12,7 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@playwright/test": "^1.53.1",
+    "@playwright/test": "^1.55.0",
     "@types/js-yaml": "^4.0.9",
     "js-yaml": "^4.1.0",
     "playwright": "^1.53.1"
