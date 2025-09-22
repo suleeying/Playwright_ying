@@ -1,8 +1,8 @@
 import { test, expect, request as pwRequest } from '@playwright/test';
 
 // const PATH = 'https://staging-sms-api.devfullteam.tech/sms-api-service/sms/send-sms'; //staging
-const PATH = 'https://sms-api.fullteam.tech/sms-api-service/sms/send-sms'; //production
-const DEFAULT_TOKEN = process.env.SMS_API_TOKEN ?? 'cWFfdGVzdF9zbXM6cWFfdGVzdF9zbXM=';
+const PATH = 'https://sms-api.fullteam.tech/sms-api-service/sms/send-otp'; //production
+const DEFAULT_TOKEN = process.env.SMS_API_TOKEN ?? 'cWFfdGVzdF9vdHA6cWFfdGVzdF9vdHA=';
 
 function uid(prefix: string) {
   return `${prefix}${new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0,15)}`;
@@ -16,26 +16,13 @@ test.describe('SMS API', () => {
     const body = {
       request_id: uid('sfrq'),
       transaction_id: uid('sfts'),
-      sender_name: 'FULLTEAM',
       mobile_number: '66868884270',
-      message: 'Hello World....!!!ying',
+      refer: 'otp', // ใช้รหัส OTP ที่ได้จากการส่ง OTP
+      otp: '643885'
+
     };
-    const body2 = {
-      request_id: uid('sfrq'),
-      transaction_id: uid('sfts'),
-      sender_name: 'FULLTEAM',
-      mobile_number: '66823861894',
-      message: 'Hello World....!!!mos',
-    };
-    const res = await ctx.post(PATH, { data: body});
-    const res2 = await ctx.post(PATH, { data: body2});
+    const res = await ctx.post(PATH, { data: body });
     const json = await res.json();
-    const json2 = await res2.json();
     console.log('Response JSON:', json);
-    console.log('Response JSON:', json2);
   });
 });
-
-
-
-
